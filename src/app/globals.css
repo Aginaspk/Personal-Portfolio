@@ -8,9 +8,6 @@
 @media (prefers-color-scheme: dark) {
 }
 
-body {
-  background-color: black;
-}
 @theme inline {
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
 }

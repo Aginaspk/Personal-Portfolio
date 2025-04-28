@@ -1,10 +1,9 @@
-import { Spotlight } from "@/components/Spotlite";
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div className="flex w-full justify-between">
-      <div className=""><Spotlight/></div>
-      <div className="transform scale-x-[-1]"><Spotlight/></div>
-    </div>
+    <main>
+      <Hero />
+    </main>
   );
 }
