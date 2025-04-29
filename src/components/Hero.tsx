@@ -3,6 +3,7 @@ import { Spotlight } from "./ui/Spotlite";
 import ShinyText from "./ui/ShinyText";
 import { LuChevronRight } from "react-icons/lu";
 import { Jim_Nightshade } from "next/font/google";
+import ConnectButton from "./ui/ConnectButton";
 
 const nightShade = Jim_Nightshade({
   weight: "400",
@@ -76,6 +77,9 @@ const Hero = () => {
                 </div>
                 a Full Stack Developer
               </div>
+            </div>
+            <div className="animate-slight-up">
+              <ConnectButton/>
             </div>
           </div>
         </div>
