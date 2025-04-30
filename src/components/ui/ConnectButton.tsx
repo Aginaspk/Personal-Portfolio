@@ -15,7 +15,7 @@ const ConnectButton = () => {
         </span>
       </div>
       <div className="inset-0 flex justify-center items-center">
-        <h1 className="font-outfit flex gap-2 items-center"><LuCopy className="text-[20px]"/><span>aginaspk6@gmail.com</span></h1>
+        <h1 className="font-outfit flex gap-2 items-center text-[#B9B9B9]"><LuCopy className="text-[20px]"/><span>aginaspk6@gmail.com</span></h1>
       </div>
     </div>
   );

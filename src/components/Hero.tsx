@@ -4,6 +4,7 @@ import ShinyText from "./ui/ShinyText";
 import { LuChevronRight } from "react-icons/lu";
 import { Jim_Nightshade } from "next/font/google";
 import ConnectButton from "./ui/ConnectButton";
+import { Vortex } from "./ui/Vortex";
 
 const nightShade = Jim_Nightshade({
   weight: "400",
@@ -37,7 +38,7 @@ const Hero = () => {
           />
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] bg-[#000319]" />
         </div>
-        <div className="flex justify-center text-white relative">
+        <div className="flex justify-center text-white relative h-screen">
           <div className="max-w-[89vw] flex flex-col items-center">
             <div>
               <button className="group flex cursor-pointer items-center rounded-full border text-sm text-white backdrop-blur-xs transition-transform duration-300 ease-in lg:text-base border-white/10 bg-white/5 hover:border-white/20 animate-slight-down">
@@ -60,7 +61,7 @@ const Hero = () => {
               <h1 className="font-outfit my-2 w-full py-px text-center text-4xl leading-snug! font-semibold text-balance opacity-90 md:text-5xl lg:text-6xl text-white">
                 I help founders convert <br className="md:hidden" /> ideas
                 <br className="hidden" /> into engaging
-                <br className="xl:hidden lg:hidden md:hidden" />
+                <br className="md:hidden" />
                 <span
                   className={`${nightShade.className} text-5xl md:text-[80px] pl-5 bg-linear-to-b from-zinc-700 via-zinc-200 to-zinc-50 bg-clip-text font-light tracking-wide text-transparent`}
                 >
@@ -81,8 +82,14 @@ const Hero = () => {
                 a Full Stack Developer
               </div>
             </div>
-            <div className="animate-slight-up">
+            <div className="animate-slight-up z-50">
               <ConnectButton />
+            </div>
+            <div className=" -z-0">
+              <Vortex
+                backgroundColor="transparent"
+                className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full"
+              />
             </div>
           </div>
         </div>
