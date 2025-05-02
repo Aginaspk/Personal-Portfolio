@@ -52,3 +52,19 @@
     transform: translateY(0);
   }
 }
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 3;
+}
+.div2 {
+  grid-area: 1 / 3 / 3 / 4;
+}
+.div3 {
+  grid-area: 3 / 2 / 4 / 4;
+}
+.div4 {
+  grid-area: 2 / 1 / 4 / 2;
+}
+.div5 {
+  grid-area: 2 / 2 / 3 / 3;
+}
