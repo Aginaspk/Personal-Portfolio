@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -180,4 +179,13 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.linear {
+  background: #020024;
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }

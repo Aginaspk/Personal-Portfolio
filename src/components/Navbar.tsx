@@ -2,7 +2,7 @@ import { LuCog } from "react-icons/lu";
 
 const Navbar = () => {
   return (
-    <div className="text-white w-[89vw] z-50 fixed top-7 flex items-center justify-between">
+    <div className="text-white w-[89vw] z-150 fixed top-7 flex items-center justify-between">
       <div className=" md:pt-[2px] pt-0">
         <img
           className="h-[20px]"
