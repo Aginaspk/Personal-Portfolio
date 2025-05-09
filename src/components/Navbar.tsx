@@ -1,12 +1,15 @@
+import Image from "next/image";
 import { LuCog } from "react-icons/lu";
 
 const Navbar = () => {
   return (
     <div className="text-white w-[89vw] z-150 fixed top-7 flex items-center justify-between">
       <div className=" md:pt-[2px] pt-0">
-        <img
+        <Image
           className="h-[20px]"
           src="https://res.cloudinary.com/dup1lh7xk/image/upload/v1746008798/image_s67ree.png"
+          width={20}
+          height={20}
           alt=""
         />
       </div>

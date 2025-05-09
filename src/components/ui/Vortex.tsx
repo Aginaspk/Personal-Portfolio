@@ -1,11 +1,11 @@
-"use client"
+"use client";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useRef } from "react";
 import { createNoise3D } from "simplex-noise";
 import { motion } from "motion/react";
 
 interface VortexProps {
-  children?: any;
+  children?: React.ReactNode;
   className?: string;
   containerClassName?: string;
   particleCount?: number;
@@ -53,23 +53,8 @@ export const Vortex = (props: VortexProps) => {
   const lerp = (n1: number, n2: number, speed: number): number =>
     (1 - speed) * n1 + speed * n2;
 
-  const setup = () => {
-    const canvas = canvasRef.current;
-    const container = containerRef.current;
-    if (canvas && container) {
-      const ctx = canvas.getContext("2d");
-
-      if (ctx) {
-        resize(canvas, ctx);
-        initParticles();
-        draw(canvas, ctx);
-      }
-    }
-  };
-
   const initParticles = () => {
     tick = 0;
-    // simplex = new SimplexNoise();
     particleProps = new Float32Array(particlePropsLength);
 
     for (let i = 0; i < particlePropsLength; i += particlePropCount) {
@@ -80,8 +65,6 @@ export const Vortex = (props: VortexProps) => {
   const initParticle = (i: number) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
-    // let x, y, vx, vy, life, ttl, speed, radius, hue;
 
     const x = rand(canvas.width);
     const y = center[1] + randRange(rangeY);
@@ -129,7 +112,6 @@ export const Vortex = (props: VortexProps) => {
       i7 = 6 + i,
       i8 = 7 + i,
       i9 = 8 + i;
-    // let n, x, y, vx, vy, life, ttl, speed, x2, y2, radius, hue;
 
     const x = particleProps[i];
     const y = particleProps[i2];
@@ -154,7 +136,9 @@ export const Vortex = (props: VortexProps) => {
     particleProps[i4] = vy;
     particleProps[i5] = life;
 
-    (checkBounds(x, y, canvas) || life > ttl) && initParticle(i);
+    if (checkBounds(x, y, canvas) || life > ttl) {
+      initParticle(i);
+    }
   };
 
   const drawParticle = (
@@ -184,10 +168,7 @@ export const Vortex = (props: VortexProps) => {
     return x > canvas.width || x < 0 || y > canvas.height || y < 0;
   };
 
-  const resize = (
-    canvas: HTMLCanvasElement,
-    ctx?: CanvasRenderingContext2D
-  ) => {
+  const resize = (canvas: HTMLCanvasElement) => {
     const { innerWidth, innerHeight } = window;
 
     canvas.width = innerWidth;
@@ -225,14 +206,37 @@ export const Vortex = (props: VortexProps) => {
   };
 
   useEffect(() => {
+    const setup = () => {
+      const canvas = canvasRef.current;
+      const container = containerRef.current;
+      if (canvas && container) {
+        const ctx = canvas.getContext("2d");
+        if (ctx) {
+          resize(canvas);
+          initParticles();
+          draw(canvas, ctx);
+        }
+      }
+    };
+
     setup();
     window.addEventListener("resize", () => {
       const canvas = canvasRef.current;
       const ctx = canvas?.getContext("2d");
       if (canvas && ctx) {
-        resize(canvas, ctx);
+        resize(canvas);
       }
     });
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        const canvas = canvasRef.current;
+        const ctx = canvas?.getContext("2d");
+        if (canvas && ctx) {
+          resize(canvas);
+        }
+      });
+    };
   }, []);
 
   return (
