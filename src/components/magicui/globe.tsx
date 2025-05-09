@@ -8,16 +8,15 @@ import { cn } from "@/lib/utils";
 
 const MOVEMENT_DAMPING = 1400;
 
-// Kerala's coordinates: 10.8505°N, 76.2711°E
-const INITIAL_PHI = -1.331 + Math.PI; // -longitude in radians + π offset to center
+const INITIAL_PHI = -1.331 + Math.PI;
 
 const GLOBE_CONFIG: COBEOptions = {
   width: 500,
   height: 500,
   onRender: () => {},
   devicePixelRatio: 2,
-  phi: INITIAL_PHI, // Start with Kerala centered
-  theta: 0.05, // Reduced to tilt Kerala higher in view
+  phi: INITIAL_PHI, 
+  theta: 0.05, 
   dark: 3,
   diffuse: 0.4,
   mapSamples: 16000,
@@ -35,13 +34,13 @@ export function Globe({
   className?: string;
   config?: COBEOptions;
 }) {
-  let phi = INITIAL_PHI; // Initialize phi to center Kerala
+  const phi = INITIAL_PHI; 
   let width = 0;
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
 
-  const r = useMotionValue(INITIAL_PHI); // Start motion value at initial phi
+  const r = useMotionValue(INITIAL_PHI); 
   const rs = useSpring(r, {
     mass: 1,
     damping: 30,
@@ -77,8 +76,8 @@ export function Globe({
       ...config,
       width: width * 2,
       height: width * 2,
-      phi: INITIAL_PHI, // Ensure globe starts at Kerala's longitude
-      theta: 0.05, // Reduced to tilt Kerala higher in view
+      phi: INITIAL_PHI, 
+      theta: 0.05, 
       onRender: (state) => {
         state.phi = phi + rs.get();
         state.width = width * 2;

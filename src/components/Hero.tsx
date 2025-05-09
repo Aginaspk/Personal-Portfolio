@@ -70,7 +70,7 @@ const Hero = () => {
               </h1>
               <div className="flex md:flex-row flex-col items-center justify-center gap-3 py-7 text-[24px] font-outfit text-[#B4B4B4]">
                 <div className="flex gap-3">
-                  Hello,I'm Aginas Pk
+                  Hello,I&apos;m Aginas Pk
                   <span className="w-20 h-10 rounded-4xl overflow-hidden object-cover">
                     <img
                       className="hover:rotate-10 hover:scale-110 transition-all duration-500"

@@ -1,4 +1,4 @@
-import { LuArrowRight, LuMap, LuMapPin } from "react-icons/lu";
+import { LuArrowRight, LuMapPin } from "react-icons/lu";
 import { Globe } from "./magicui/globe";
 import { IconCloudDemo } from "./magicui/IconCloudDemo";
 const MyDisplay = () => {
