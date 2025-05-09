@@ -5,6 +5,7 @@ import { LuChevronRight } from "react-icons/lu";
 import { Jim_Nightshade } from "next/font/google";
 import ConnectButton from "./ui/ConnectButton";
 import { Vortex } from "./ui/Vortex";
+import Image from "next/image";
 
 const nightShade = Jim_Nightshade({
   weight: "400",
@@ -72,9 +73,12 @@ const Hero = () => {
                 <div className="flex gap-3">
                   Hello,I&apos;m Aginas Pk
                   <span className="w-20 h-10 rounded-4xl overflow-hidden object-cover">
-                    <img
+                    <Image
                       className="hover:rotate-10 hover:scale-110 transition-all duration-500"
                       src="https://imgix.ranker.com/list_img_v2/8131/3168131/original/3168131?fit=crop&fm=pjpg&q=80&dpr=2&w=1200&h=720"
+                      width={1200}
+                      height={700}
+                      priority
                       alt=""
                     />
                   </span>
