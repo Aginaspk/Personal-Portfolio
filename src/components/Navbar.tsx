@@ -6,10 +6,10 @@ const Navbar = () => {
     <div className="text-white w-[89vw] z-150 fixed top-7 flex items-center justify-between">
       <div className=" md:pt-[2px] pt-0">
         <Image
-          className="h-[20px]"
+          className="h-[16px] w-[22px]"
           src="https://res.cloudinary.com/dup1lh7xk/image/upload/v1746008798/image_s67ree.png"
-          width={20}
-          height={20}
+          width={22}
+          height={18}
           alt=""
         />
       </div>

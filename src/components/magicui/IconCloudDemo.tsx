@@ -27,11 +27,11 @@ const slugs = [
 
 export function IconCloudDemo() {
   const images = slugs.map(
-    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`,
+    (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
   );
 
   return (
-    <div className="relative flex size-full items-center justify-center overflow-hidden">
+    <div className="relative h-full w-full flex items-center justify-center overflow-visible">
       <IconCloud images={images} />
     </div>
   );

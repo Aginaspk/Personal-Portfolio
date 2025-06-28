@@ -1,15 +1,17 @@
 import { LuArrowRight, LuMapPin } from "react-icons/lu";
 import { Globe } from "./magicui/globe";
-import { IconCloudDemo } from "./magicui/IconCloudDemo";
+import { ITSkillsMarquee } from "./iTSkillsMarquee";
+import { Ripple } from "./magicui/ripple";
+import MacUI from "./macUI";
 const MyDisplay = () => {
   return (
-    <div className="mx-auto grid w-full auto-rows-[21rem] grid-cols-6 gap-4 md:max-w-full md:auto-rows-[19rem] my-20">
+    <div className="mx-auto md:px-5 grid w-full auto-rows-[21rem] grid-cols-6 gap-4 md:max-w-full md:auto-rows-[19rem] my-20">
       <div className="col-span-6 md:col-span-3 lg:col-span-4 w-full rounded-lg [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"></div>
 
       {/* globe */}
       <div className="group col-span-6 md:col-span-3 lg:col-span-2 md:row-span-2 w-full rounded-lg [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] relative overflow-hidden z-50">
         <h1 className="mt-4 w-full bg-linear-to-b from-[#edeffd] to-[#7b9cda] bg-clip-text text-center text-2xl leading-[100%] font-bold tracking-tighter text-balance text-transparent select-none md:mt-12 absolute z-100">
-          I’m available for communication
+          I&apos;m available for communication
           <br /> regardless of the time zone
         </h1>
         <div className="absolute -bottom-44 w-[1200px] -left-24 ">
@@ -43,9 +45,17 @@ const MyDisplay = () => {
 
       {/* cloud */}
 
-      <div className="col-span-6 md:col-span-3 lg:col-span-2 md:row-span-2 w-full rounded-lg [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] relative">
-        <div className="h-full w-full absolute top-0 left-0">
-          <IconCloudDemo />
+      <div className="col-span-6 md:col-span-3 lg:col-span-2 md:row-span-2 w-full h-full rounded-lg [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] relative overflow-visible flex flex-col justify-between">
+        <h1 className="w-full bg-linear-to-b from-[#fd81e298] to-[#da7bda] bg-clip-text px-4 text-center text-2xl leading-[100%] font-bold tracking-tighter text-transparent select-none dark:from-[#edeffd] mt-12">
+          Dedicated to continuous learning
+          <br /> in the fast-evolving tech world.
+        </h1>
+        <div className="w-full top-0 left-0 overflow-visible">
+          <ITSkillsMarquee />
+        </div>
+        <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden bg-transparent">
+          <MacUI/>
+          <Ripple />
         </div>
       </div>
 

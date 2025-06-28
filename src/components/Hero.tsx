@@ -15,7 +15,7 @@ const nightShade = Jim_Nightshade({
 const Hero = () => {
   return (
     <>
-      <div className="pb-20 pt-36 h-screen mb-40">
+      <div className="pb-20 pt-44 h-screen mb-40">
         <div>
           <Spotlight
             className="-top-40 -left-10 md:-left-32 md:-top-20 md:h-screen"
