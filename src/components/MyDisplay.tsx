@@ -4,6 +4,8 @@ import { ITSkillsMarquee } from "./iTSkillsMarquee";
 import { Ripple } from "./magicui/ripple";
 import MacUI from "./macUI";
 import Logo from "./display/logo";
+import Technology from "./display/technology";
+import { ArrowRight, Code } from "lucide-react";
 
 const MyDisplay = () => {
   return (
@@ -61,9 +63,30 @@ const MyDisplay = () => {
 
       {/* Bottom cards */}
       <div className=" col-span-6 md:col-span-3 lg:col-span-2 w-full min-h-[21rem] md:min-h-0 rounded-lg [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] relative">
-        <Logo/>
+        <Logo />
       </div>
-      <div className="col-span-6 md:col-span-6 lg:col-span-4 w-full min-h-[21rem] md:min-h-0 rounded-lg [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]"></div>
+      {/* last */}
+      <div className="group col-span-6 md:col-span-6 lg:col-span-4 w-full min-h-[21rem] md:min-h-0 rounded-lg [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] relative overflow-hidden">
+        <div>
+          <Technology />
+        </div>
+        <div className="pointer-events-none z-30 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10 absolute bottom-0 w-full">
+          <Code
+            size={40}
+            className="text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75 mb-1"
+          />
+          <h1 className="max-w-lg text-neutral-400 font-outfit">Tech Stack</h1>
+          
+        </div>
+        <div className="absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-6 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 z-50 font-outfit">
+          <h4 className="text-neutral-300 flex items-center gap-2 font-bold cursor-pointer">
+            Explore Stack{" "}
+            <span className="pt-[2px]">
+              <ArrowRight />
+            </span>
+          </h4>
+        </div>
+      </div>
     </div>
   );
 };
