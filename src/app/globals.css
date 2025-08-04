@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+html {
+  scrollbar-width: none;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -45,28 +49,33 @@
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   @keyframes marquee {
-  from {
-    transform: translateX(0);
+    from {
+      transform: translateX(0);
     }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
     }
   }
   @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
+    from {
+      transform: translateY(0);
     }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
-  --animate-ripple: ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite
-;
+  --animate-ripple: ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s)
+    infinite;
   @keyframes ripple {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);}
-  50% {
-    transform: translate(-50%, -50%) scale(0.9);}}}
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+  }
+}
 
 @theme inline {
   --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
